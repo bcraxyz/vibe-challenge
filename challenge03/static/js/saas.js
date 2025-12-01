@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebas
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDrVLfTKNY-5wTybEML7FsgXm5OPbabx2g",
+    apiKey: "AIzaSyCjd16pOZ9O5-Ktom8lnDctp_0Qniaq61o",
     authDomain: "mba-linkwise.firebaseapp.com",
     projectId: "mba-linkwise",
 };
