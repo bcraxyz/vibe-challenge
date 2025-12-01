@@ -1,0 +1,120 @@
+/* Turbo-Do Specific Styles */
+
+.turbodo-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#todo {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#todo li {
+    position: relative;
+    background: var(--surface);
+    margin: 1rem 0;
+    padding: 1rem 3rem 1rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px var(--shadow);
+}
+
+#plus-row {
+    display: flex;
+    align-items: center;
+    background: var(--background);
+}
+
+#plus-row .plus {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    color: var(--text);
+}
+
+#plus-row input {
+    flex: 1;
+    padding: 0.4rem;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+}
+
+#plus-row button {
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+}
+
+#plus-row input:focus {
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.4);
+    border-radius: 6px;
+}
+
+#plus-row button:hover {
+    background: rgba(79, 70, 229, 0.3);
+    border-radius: 6px;
+}
+
+#todo input[type="checkbox"] {
+    margin-right: 1rem;
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
+#todo .text {
+    vertical-align: middle;
+    color: var(--text);
+}
+
+#todo .car {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scaleX(-1);
+    opacity: 0;
+    font-size: 1.5rem;
+    transition: transform 1s ease, opacity 0.2s;
+}
+
+#todo .car.zoom {
+    opacity: 1;
+    transform: translate(400px, -50%) scaleX(-1);
+}
+
+#todo .confetti {
+    position: absolute;
+    top: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    animation: fall 2s linear forwards;
+}
+
+@keyframes fall {
+    0%   { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(200px) rotate(720deg); opacity: 0; }
+}
+
+#todo li.done .text {
+    text-decoration: line-through;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+#todo li.done input[type="checkbox"] {
+    accent-color: #aaa;
+}
+
+#todo label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
