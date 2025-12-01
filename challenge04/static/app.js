@@ -5,9 +5,9 @@ let currentUser = null;
 let allLinks = [];
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDrVLfTKNY-5wTybEML7FsgXm5OPbabx2g",
-    authDomain: "mba-linkwise.firebaseapp.com",
-    projectId: "mba-linkwise",
+    apiKey: "AIzaSyCiUbYrkY2ocp_YvxWieYLmGCFdlrrTwoc",
+    authDomain: "mba-vibesuite.firebaseapp.com",
+    projectId: "mba-vibesuite",
 };
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
