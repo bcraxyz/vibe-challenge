@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="alphasec">
+    <meta name="description" content="VibeSuite - All-in-One Productivity Suite">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeSuite - Productivity Suite</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="turbodo.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Auth Screen -->
+        <div id="authScreen" class="auth-screen">
+            <div class="auth-box">
+                <h1>🎯 VibeSuite</h1>
+                <p class="tagline">Your all-in-one productivity suite</p>
+                <div id="authForm">
+                    <input type="email" id="email" placeholder="Email" autocomplete="email">
+                    <input type="password" id="password" placeholder="Password" autocomplete="current-password">
+                    <button id="signInBtn" class="primary-btn">Sign In</button>
+                    <button id="signUpBtn" class="secondary-btn highlight-btn">Create Account</button>
+                </div>
+                <div id="authError" class="error-message"></div>
+            </div>
+        </div>
+
+        <!-- Main App Screen -->
+        <div id="appScreen" class="app-screen hidden">
+            <header>
+                <div class="header-content">
+                    <h1><a href="/" class="home-link">🎯 VibeSuite</a></h1>
+                    <div class="header-right">
+                        <div class="user-dropdown">
+                            <button class="user-icon-btn" id="userMenuBtn">👤</button>
+                            <div class="dropdown-menu hidden" id="userMenu">
+                                <div class="dropdown-header">
+                                    <span id="userEmail" class="user-email-dropdown"></span>
+                                </div>
+                                <button id="signOutBtn" class="dropdown-item">Sign Out</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab Navigation -->
+                <nav class="tabs">
+                    <button class="tab-btn active" data-tab="turbodo">🏁 Turbo-Do</button>
+                    <button class="tab-btn" data-tab="linkwise">📚 Linkwise</button>
+                </nav>
+            </header>
+
+            <main>
+                <!-- Turbo-Do Tab Content -->
+                <div id="turbodoTab" class="tab-content active">
+                    <div class="turbodo-container">
+                        <ul id="todo">
+                            <li id="plus-row">
+                                <span class="plus">＋</span>
+                                <input id="new-task" type="text" placeholder="New task…">
+                                <button id="add-btn">✔</button>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="text">Create a neon cyberpunk calculator</span>
+                                    <span class="car">🏎️</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="text">Animate a pixel-art space invader with CSS</span>
+                                    <span class="car">🏎️</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="text">Code a lo-fi music visualizer in JavaScript</span>
+                                    <span class="car">🏎️</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Linkwise Tab Content -->
+                <div id="linkwiseTab" class="tab-content">
+                    <div class="linkwise-container">
+                        <div class="search-section">
+                            <input type="text" id="searchInput" class="search-input" placeholder="Search links and tags..." autocomplete="off">
+                        </div>
+                        
+                        <div class="add-link-section">
+                            <div class="input-group">
+                                <input type="url" id="urlInput" placeholder="Paste a link to save..." autocomplete="off">
+                                <button id="addLinkBtn" class="primary-btn">
+                                    <span id="addBtnText">Save</span>
+                                    <span id="addBtnLoader" class="loader hidden"></span>
+                                </button>
+                            </div>
+                            <div id="addLinkError" class="error-message"></div>
+                        </div>
+
+                        <div id="linksContainer" class="links-container">
+                            <div class="empty-state"><p>No links saved yet. Add your first link above!</p></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+    <script src="turbodo.js"></script>
+</body>
+</html>
