@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeSuite Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/saas.css">
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="logo">✨ VibeSuite</div>
+            <nav>
+                <button class="nav-item active" data-target="turbodo">
+                    <span class="icon">🏎️</span> Turbo-Do
+                </button>
+                <button class="nav-item" data-target="linkwise">
+                    <span class="icon">📚</span> Linkwise
+                </button>
+            </nav>
+            <div class="user-profile">
+                <span id="userEmail">User</span>
+                <button id="logoutBtn">Sign Out</button>
+            </div>
+        </aside>
+        <main class="content-area">
+            <div id="turbodo-view" class="app-view active">
+                <!-- Using trailing slash to ensure relative paths work -->
+                <iframe src="/apps/turbodo/" class="app-frame"></iframe>
+            </div>
+            <div id="linkwise-view" class="app-view hidden">
+                <iframe src="/apps/linkwise/" class="app-frame"></iframe>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/static/js/saas.js"></script>
+</body>
+</html>
