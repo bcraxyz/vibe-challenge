@@ -281,8 +281,30 @@ function escapeHtml(text){
     return div.innerHTML; 
 }
 
-function formatDate(dateString){ 
-    if(!dateString) return 'Just now'; 
-    const d=new Date(dateString), now=new Date(), diff=now-d, days=Math.floor(diff/(1000*60*60*24)); 
-    return days===0?'Today':days===1?'Yesterday':days<7?`${days} days ago`:d.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}); 
+function formatDate(dateString) {
+    if (!dateString) return 'Just now';
+    
+    const d = new Date(dateString);
+    const now = new Date();
+    
+    // Calculate difference in milliseconds
+    // Math.max(0, ...) ensures we never get negative numbers even if server time is ahead
+    const diff = Math.max(0, now - d);
+    
+    // Convert to days
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    if (days === 0) {
+        return 'Today';
+    } else if (days === 1) {
+        return 'Yesterday';
+    } else if (days < 7) {
+        return `${days} days ago`;
+    } else {
+        return d.toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'short', 
+            day: 'numeric' 
+        });
+    }
 }
